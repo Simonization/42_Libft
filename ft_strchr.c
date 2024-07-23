@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 15:06:24 by slangero          #+#    #+#             */
-/*   Updated: 2024/05/05 12:34:03 by slangero         ###   ########.fr       */
+/*   Created: 2024/05/02 17:53:51 by slangero          #+#    #+#             */
+/*   Updated: 2024/05/05 16:27:25 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+char	*ft_strchr(const char *s, int i)
 {
-	if (0 <= c && c <= 127)
-		return (1);
-	return (0);
+	while (*s)
+	{
+		if (*s == (char)i)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)i == '\0')
+		return ((char *)s);
+	return (NULL);
 }
+/*
+il faut ou non cast le int en char ou const char?
+*/

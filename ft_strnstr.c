@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slangero <slangero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 15:06:32 by slangero          #+#    #+#             */
-/*   Updated: 2024/05/05 16:32:30 by slangero         ###   ########.fr       */
+/*   Created: 2024/05/02 17:54:23 by slangero          #+#    #+#             */
+/*   Updated: 2024/05/05 15:45:33 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
-	char	*char_dest;
-	char	*char_src;
+	size_t	j;
 
-	if (dest == src)
-		return (dest);
-	char_dest = (char *) dest;
-	char_src = (char *) src;
+	if (needle[0] == '\0')
+		return ((char *)haystack);
 	i = 0;
-	while (i < n)
+	while (haystack[i] && i < len)
 	{
-		char_dest[i] = char_src[i];
+		j = 0;
+		while (haystack[i + j] == needle[j] && i + j < len)
+		{
+			if (needle[j + 1] == '\0')
+				return ((char *)haystack + i);
+			j++;
+		}
 		i++;
 	}
-	return (char_dest);
+	return (NULL);
 }
-	// void pointer becomes a pointer to a character 
-	// useful for array notation in while loop
-	// return dest or return char_dest?
+
+/*
+tu dois rajouter une cdt if haystack == needle, avant de faire le while?
+
+pourquoi pas *(char*)haystack 
+comme dans ncmp
+
+*/

@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 15:06:24 by slangero          #+#    #+#             */
-/*   Updated: 2024/05/05 12:34:03 by slangero         ###   ########.fr       */
+/*   Created: 2024/05/02 17:55:04 by slangero          #+#    #+#             */
+/*   Updated: 2024/05/05 17:01:10 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isascii(int c)
+int	ft_tolower(int c)
 {
-	if (0 <= c && c <= 127)
-		return (1);
-	return (0);
+	if ('A' <= c && c <= 'Z')
+		c += 32;
+	return (c);
 }

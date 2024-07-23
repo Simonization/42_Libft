@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 19:24:08 by slangero          #+#    #+#             */
-/*   Updated: 2024/04/17 18:50:03 by slangero         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:03:44 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*ft_strdup(const char *s)
 		i++;
 	}
 	dupstr[i] = '\0';
-
 	return (dupstr);
 }
 

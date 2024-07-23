@@ -6,7 +6,7 @@
 /*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:43:51 by slangero          #+#    #+#             */
-/*   Updated: 2024/04/24 16:14:59 by slangero         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:22:27 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	nb;
 
 	i = 0;
@@ -32,17 +32,19 @@ int	ft_atoi(const char *str)
 	{
 		nb *= 10;
 		nb += str[i] - 48;
-		if ( nb < 0 && sign == -1)
+		if (nb < 0 && sign == -1)
 			return (0);
-		if ( nb < 0 && sign == 1)
+		if (nb < 0 && sign == 1)
 			return (-1);
 		i++;
 	}
 	return (nb * sign);
 }
+/*
 #include <stdio.h>
 int main(void)
 {
 	printf("integer is :%d\n", ft_atoi("   78512144544444444444444444444444"));
 	return (0);
 }
+*/

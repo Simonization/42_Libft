@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/15 15:37:07 by slangero          #+#    #+#             */
-/*   Updated: 2024/05/05 14:56:22 by slangero         ###   ########.fr       */
+/*   Created: 2024/05/02 17:53:57 by slangero          #+#    #+#             */
+/*   Updated: 2024/05/05 16:53:40 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*verif;
-	char	*original;
 	size_t	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
-	verif = (char *) s2;
-	original = (char *) s1;
-	while (i < n)
+	while (s[i])
 	{
-		if (original[i] != verif[i])
-			return ((unsigned char)original[i] - (unsigned char)verif[i]);
+		f(i, s + i);
 		i++;
 	}
-	return (0);
 }
+/*
+unsigned int ou size_t ?
+on peut aussi ecrire comme Vicente: (*f)(i, &s[i]);
+protection?
+*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slangero <slangero@student.s19.be>         +#+  +:+       +#+        */
+/*   By: slangero <slangero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 17:45:16 by slangero          #+#    #+#             */
-/*   Updated: 2024/04/25 11:16:28 by slangero         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:29:43 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start >= ft_strlen(s))
+	i = ft_strlen(s);
+	if (start >= i)
 		return (ft_strdup(""));
-
-	substr = (char *)malloc(sizeof(char) * (len + 1))
+	if (len > i - start)
+		len = i - start;
+	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
-
 	i = 0;
 	while (i < len && s[start])
 		substr[i++] = s[start++];
 	substr[i] = '\0';
-
 	return (substr);
 }
 /*
