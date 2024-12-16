@@ -6,7 +6,7 @@
 /*   By: slangero <slangero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:49:57 by slangero          #+#    #+#             */
-/*   Updated: 2024/05/05 15:43:12 by slangero         ###   ########.fr       */
+/*   Updated: 2024/12/15 18:27:42 by slangero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,23 +51,16 @@ char	**ft_split(const char *s, char c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 char	*ft_itoa(int n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-// LIST ? 
-// Functions to manipulate memory and strings is very useful.
-// But you will soon discover
-// that manipulating lists is even more useful.
-// Use the following structure to represent a node of your list.
+
 // STRUCTURES
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-/*
-content: The data contained in the node.
-void * allows to store any kind of data.
-next: The address of the next node, or NULL if the next node is the last one.
-*/
+
 #endif
